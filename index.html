@@ -15,6 +15,8 @@
 	//		Init
 	//////////////////////////////////////////////////////////////////////////////////
 	// init renderer
+	console.log("yo");
+	console.log(THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro');
 	var renderer	= new THREE.WebGLRenderer({
 		antialias: true,
 		alpha: true
@@ -92,7 +94,6 @@
 	////////////////////////////////////////////////////////////////////////////////
 	//          Create a ArMarkerControls
 	////////////////////////////////////////////////////////////////////////////////
-	console.log(THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro');
 	// init controls for camera
 	var markerControls = new THREEx.ArMarkerControls(arToolkitContext, camera, {
 		type : 'pattern',
