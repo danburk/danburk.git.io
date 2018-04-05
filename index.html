@@ -71,12 +71,12 @@
 	
 	// create atToolkitContext
 	var arToolkitContext = new THREEx.ArToolkitContext({
-		cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '/data/data/camera_para.dat',
+		cameraParametersUrl: 'https://github.com/jeromeetienne/AR.js/data/data/camera_para.dat',
 		detectionMode: 'mono',
 	})
 	
 	// initialize it
-	arToolkitContext.init(function onCompleted(){
+	arToolkitContext.init(function onCompleted(){r
 		// copy projection matrix to camera
 		camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
 	})
