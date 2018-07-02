@@ -1,0 +1,45 @@
+<!doctype HTML>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>WebVR UI with A-Frame</title>
+	<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+	<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
+	
+	</head>
+  <body id="b" style='margin : 0px; overflow: hidden;'>
+
+<a-scene id="a-scene" embedded arjs="sourceType:webcam; maxDetectionRate:30; debugUiEnabled:false;">
+  <a-marker camera preset='hiro'> <a-plane id="buttRegion1" scale="1 1 1" position="0 0 0" opacity="1" rotation="-90 0 0" width="1" height="1" color="#7BC8A4">
+  </a-plane> </a-marker camera> 
+
+<a-entity camera></a-entity>
+    <a-entity cursor="fuse: true;"
+                         position="0 0 -1"
+                         scale="0.02 0.02 0.02"
+                         geometry="primitive: ring"
+                         material="color: black; shader: flat" begin="click">
+                   
+                  
+               </a-entity>
+  </a-scene>
+  <script>
+	var pointed = false;
+	var isFirst = true;
+   document.querySelector('#buttRegion1').addEventListener("click", function(e){
+		pointed = true;
+		if (pointed){
+			 document.querySelector('#b').addEventListener("click", function(e){
+			 if (!isFirst){
+					alert();
+				} else {
+					isFirst = false;
+				}
+			 });
+		}
+		
+	
+   }, false);
+ </script>
+  </body>
+</html>
