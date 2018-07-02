@@ -1,0 +1,46 @@
+<!doctype HTML>
+<html>
+<head>
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+</head>
+<body>
+<script>
+var ARObject01;
+var times = 0;
+var enlarged = false;
+
+AFRAME.registerComponent('markerhandler', {
+	
+  init: function() {
+
+    // Set up the tick throttling. Will check if marker is active every 500ms
+    ARObject01 = $('#ARObject01')[0];
+		ARObject01.addEventListener('click', function () { 	
+		alert();
+			if (!enlarged) {
+				ARObject01.setAttribute('height', '1');
+				ARObject01.setAttribute('width', '1');
+				enlarged = true;
+			} else if (enlarged) {
+				ARObject01.setAttribute('height', '0.5');
+				ARObject01.setAttribute('width', '0.5');
+				enlarged = false;	
+			}
+  })
+}});
+</script>
+<a-scene id="ascene" cursor="rayOrigin: mouse" embedded arjs="sourceType:webcam; maxDetectionRate:30; debugUiEnabled:false;">
+   <a-marker preset='hiro' markerhandler emitevents="true" id="hiroMarker">
+    <a-plane id="ARObject01" position='-0.25 0 0.25' height="0.5" width="0.5" rotation="-90 0 0" material='color: red;'></a-plane>
+   </a-marker>
+
+<a-entity camera></a-entity>
+  </a-scene>
+  </body>
+</html>
