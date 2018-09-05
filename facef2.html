@@ -40,26 +40,13 @@ AFRAME.registerComponent('markerhandler', {
 		text.setAttribute('rotation', '-90 0 0');
 		text.setAttribute('position', '-1 0.2 0');
 		
-		let button = document.createElement('a-plane');
-		button.setAttribute('id', 'b');
-		button.setAttribute('height', '0.5');
-		button.setAttribute('width', '0.5');
-		button.setAttribute('color', 'blue');
-		button.setAttribute('rotation', '-90 0 0');
-		button.setAttribute('position', '-0.75 0.1 1');
-		
 		scene.appendChild(plane);
 		scene.appendChild(text);
-		scene.appendChild(button);
+			
 		plane.addEventListener('click', function () { 
-			plane.parentNode.removeChild(button);
 			plane.parentNode.removeChild(text);
 			plane.parentNode.removeChild(plane);
 			
-		});
-		
-		button.addEventListener('click', function () { 
-			text.setAttribute('value', "success");
 		});
 	});
 	
