@@ -27,7 +27,7 @@ AFRAME.registerComponent('markerhandler', {
 		plane.setAttribute('height', '1');
 		plane.setAttribute('width', '1');
 		plane.setAttribute('rotation', '-90 0 0');
-		plane.setAttribute('position', '-0.5 0.01 0');
+		plane.setAttribute('position', '-1 0.01 0');
 			
 		let text = document.createElement('a-text');
 		text.setAttribute('id', 'text');
@@ -37,7 +37,7 @@ AFRAME.registerComponent('markerhandler', {
 		text.setAttribute('line-height', '64');
 		text.setAttribute('value', "Tax cuts Liberals!");
 		text.setAttribute('rotation', '-90 0 0');
-		text.setAttribute('position', '-0.5 0.1 0');
+		text.setAttribute('position', '-1 0.1 0');
 		
 		scene.appendChild(plane);
 		scene.appendChild(text);
