@@ -413,13 +413,10 @@
 					heightPercent = 10;
 				}
 				count++;
-					$('#sc' + colNum).append('<a href="#'+ index +'"><div class="box" style="background-color:' + color + '; height:'+ boxHeight +'px; width:'+ 100 + '%"></div></a>');
-					addToList(index, value, widthPercent, heightPercent);
-									widthPercent += 2.5;
-
-				}
-				
-				
+				$('#sc' + colNum).append('<a href="#'+ index +'"><div class="box" style="background-color:' + color + '; height:'+ boxHeight +'px; width:'+ 100 + '%"></div></a>');
+				addToList(index, value, widthPercent, heightPercent);
+				widthPercent += 2.5;
+				}	
 			});
 
 			$(".timeline__content").click(function () {
